@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+data/
+*.sqlite
+*.sqlite-journal
+.env
+*.log
+.vscode/mcp.json

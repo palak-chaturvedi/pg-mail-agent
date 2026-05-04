@@ -1,0 +1,37 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "pg-mail-mcp"
+version = "0.1.0"
+description = "MCP server exposing the PostgreSQL mailing list archives (pgsql-hackers) as structured search/thread tools."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "pg-mail-mcp" }]
+dependencies = [
+    "mcp>=1.2.0",
+    "httpx>=0.27",
+    "sqlite-vec>=0.1.6",
+    "beautifulsoup4>=4.12",
+    "lxml>=5.2",
+    "python-dateutil>=2.9",
+    "click>=8.1",
+    "tqdm>=4.66",
+]
+
+[project.optional-dependencies]
+local-embed = ["sentence-transformers>=3.0"]
+openai = ["openai>=1.40"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.23", "ruff>=0.5"]
+
+[project.scripts]
+pg-mail-mcp = "pg_mail_mcp.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/pg_mail_mcp"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"

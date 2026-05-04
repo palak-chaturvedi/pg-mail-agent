@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "pg-mail": {
+      "type": "stdio",
+      "command": "${workspaceFolder}/.venv/Scripts/pg-mail-mcp.exe",
+      "args": ["serve"],
+      "env": {
+        "PGMAIL_DB_PATH": "${userHome}/.pg-mail-mcp/pgmail.sqlite",
+        "PGMAIL_LISTS": "pgsql-hackers",
+        "PGMAIL_EMBEDDER": "none",
+        "PGMAIL_COOKIE": "REPLACE_WITH_YOUR_postgresql.org_SESSION_COOKIE"
+      }
+    }
+  }
+}

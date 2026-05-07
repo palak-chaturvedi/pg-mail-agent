@@ -13,3 +13,5 @@ data/
 .env
 *.log
 .vscode/mcp.json
+
+dist/

@@ -4,12 +4,25 @@ build-backend = "hatchling.build"
 
 [project]
 name = "pg-mail-mcp"
-version = "0.1.0"
-description = "MCP server exposing the PostgreSQL mailing list archives (pgsql-hackers) as structured search/thread tools."
+version = "0.2.0"
+description = "MCP server exposing the PostgreSQL mailing list archives (pgsql-hackers) as structured search/thread/commitfest/git tools for AI assistants."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }
-authors = [{ name = "pg-mail-mcp" }]
+authors = [{ name = "Palak Chaturvedi" }]
+keywords = ["mcp", "postgresql", "pgsql-hackers", "mailing-list", "commitfest", "ai", "copilot", "claude"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Database",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Communications :: Email :: Mailing List Servers",
+]
 dependencies = [
     "mcp>=1.2.0",
     "httpx>=0.27",
@@ -20,6 +33,11 @@ dependencies = [
     "click>=8.1",
     "tqdm>=4.66",
 ]
+
+[project.urls]
+Homepage = "https://github.com/palak-chaturvedi/pg-mail-agent"
+Repository = "https://github.com/palak-chaturvedi/pg-mail-agent"
+Issues = "https://github.com/palak-chaturvedi/pg-mail-agent/issues"
 
 [project.optional-dependencies]
 local-embed = ["sentence-transformers>=3.0"]
